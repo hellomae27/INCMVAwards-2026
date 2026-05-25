@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCMV Awards 2026 Live Tally & Leaderboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #000000;
+        }
+
+        /* Top Header Styling */
+        .header-banner {
+            padding: 20px 15px 10px 15px;
+            text-align: center;
+        }
+        .header-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #111111;
+        }
+
+        /* Total Views Counter Display Box */
+        .total-views-box {
+            text-align: center;
+            padding: 15px 10px;
+            margin-bottom: 20px;
+            border-bottom: 5px solid #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .total-views-label {
+            font-size: 0.95rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555555;
+            margin-bottom: 2px;
+        }
+        .total-views-count {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #111111;
+        }
+
+        /* Section Headings */
+        .section-title {
+            background-color: #111111;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.4rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Table Structure & Styling */
+        .tally-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        /* Table Header Row */
+        .tally-table th {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 12px 20px;
+            border-bottom: 3px solid #000000;
+        }
+
+        /* Table Body Rows */
+        .tally-table td {
+            font-size: 1.15rem;
+            padding: 15px 20px;
+            vertical-align: middle;
+        }
+
+        /* Serif font style for the Lokal names */
+        .lokal-name {
+            font-family: "Georgia", "Times New Roman", Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #222222;
+        }
+
+        /* Align view counts to the right */
+        .view-count, .top-view-count {
+            text-align: right;
+            font-weight: 400;
+            color: #111111;
+        }
+
+        /* Alternating row backgrounds */
+        .tally-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .tally-table tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* Rank Badge Style (Plain text matching the image design) */
+        .rank-badge {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            display: inline-block;
+            width: 40px;
+            color: #111111;
+        }
+
+        /* Floating Scroll-to-Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease;
+            z-index: 1000;
+}
+        .scroll-top-btn:hover {
+            background-color: #0099cc;
+        }
+
+        .loading {
+            color: #888;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid px-0">
+    
+    <div class="header-banner">
+        <h1 class="header-title">
+            God's Love |<br>
+            Distrito ng Benguet | INCMV<br>
+            AWARDS 2026
+        </h1>
+    </div>
+
+    <div class="total-views-box">
+        <div class="total-views-label"><i class="fa-solid fa-eye me-1"></i> Total Live Views</div>
+        <div class="total-views-count" id="overall-total">Counting...</div>
+    </div>
+
+    <div class="section-title"><i class="fa-solid fa-list-ol me-2"></i> All Lokals Tally</div>
+    <div class="table-responsive">
+        <table class="tally-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Lokal</th>
+                    <th style="text-align: right;">Views</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="lokal-name">Ambiong</td><td class="view-count loading" data-key="lokal_ambiong">Loading...</td></tr>
+                <tr><td class="lokal-name">Atok Gold</td><td class="view-count loading" data-key="lokal_atok_gold">Loading...</td></tr>
+                <tr><td class="lokal-name">Aurora Hill</td><td class="view-count loading" data-key="lokal_aurora_hill">Loading...</td></tr>
+                <tr><td class="lokal-name">Baguio City</td><td class="view-count loading" data-key="lokal_baguio_city">Loading...</td></tr>
+                <tr><td class="lokal-name">Balakbak</td><td class="view-count loading" data-key="lokal_balakbak">Loading...</td></tr>
+                <tr><td class="lokal-name">Balatoc</td><td class="view-count loading" data-key="lokal_balatoc">Loading...</td></tr>
+                <tr><td class="lokal-name">Bangho</td><td class="view-count loading" data-key="lokal_bangho">Loading...</td></tr>
+                <tr><td class="lokal-name">Basca</td><td class="view-count loading" data-key="lokal_basca">Loading...</td></tr>
+                <tr><td class="lokal-name">Binanga</td><td class="view-count loading" data-key="lokal_binanga">Loading...</td></tr>
+                <tr><td class="lokal-name">Buyagan</td><td class="view-count loading" data-key="lokal_buyagan">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Camp 6</td><td class="view-count loading" data-key="lokal_camp_6">Loading...</td></tr>
+                <tr><td class="lokal-name">Camp 7</td><td class="view-count loading" data-key="lokal_camp_7">Loading...</td></tr>
+                <tr><td class="lokal-name">Camp 8</td><td class="view-count loading" data-key="lokal_camp_8">Loading...</td></tr>
+                <tr><td class="lokal-name">City Camp</td><td class="view-count loading" data-key="lokal_city_camp">Loading...</td></tr>
+                <tr><td class="lokal-name">Gibraltar</td><td class="view-count loading" data-key="lokal_gibraltar">Loading...</td></tr>
+                <tr><td class="lokal-name">Greenwater</td><td class="view-count loading" data-key="lokal_greenwater">Loading...</td></tr>
+                <tr><td class="lokal-name">Guisad</td><td class="view-count loading" data-key="lokal_guisad">Loading...</td></tr>
+                <tr><td class="lokal-name">Hillside</td><td class="view-count loading" data-key="lokal_hillside">Loading...</td></tr>
+                <tr><td class="lokal-name">Irisan</td><td class="view-count loading" data-key="lokal_irisan">Loading...</td></tr>
+                <tr><td class="lokal-name">Kapangan</td><td class="view-count loading" data-key="lokal_kapangan">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Kias</td><td class="view-count loading" data-key="lokal_kias">Loading...</td></tr>
+                <tr><td class="lokal-name">Lacaan</td><td class="view-count loading" data-key="lokal_lacaan">Loading...</td></tr>
+                <tr><td class="lokal-name">La Trinidad</td><td class="view-count loading" data-key="lokal_la_trinidad">Loading...</td></tr>
+                <tr><td class="lokal-name">Loacan</td><td class="view-count loading" data-key="lokal_loacan">Loading...</td></tr>
+                <tr><td class="lokal-name">Loakan Airport</td><td class="view-count loading" data-key="lokal_loakan_airport">Loading...</td></tr>
+                <tr><td class="lokal-name">Lourdes</td><td class="view-count loading" data-key="lokal_lourdes">Loading...</td></tr>
+                <tr><td class="lokal-name">Marcos Highway</td><td class="view-count loading" data-key="lokal_marcos_highway">Loading...</td></tr>
+                <tr><td class="lokal-name">Megaroyale Village</td><td class="view-count loading" data-key="lokal_megaroyale_village">Loading...</td></tr>
+                <tr><td class="lokal-name">Mirador Hills</td><td class="view-count loading" data-key="lokal_mirador_hills">Loading...</td></tr>
+                <tr><td class="lokal-name">Norcar</td><td class="view-count loading" data-key="lokal_norcar">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Penged</td><td class="view-count loading" data-key="lokal_penged">Loading...</td></tr>
+                <tr><td class="lokal-name">Philex</td><td class="view-count loading" data-key="lokal_philex">Loading...</td></tr>
+                <tr><td class="lokal-name">Pinsao</td><td class="view-count loading" data-key="lokal_pinsao">Loading...</td></tr>
+                <tr><td class="lokal-name">Posos</td><td class="view-count loading" data-key="lokal_posos">Loading...</td></tr>
+                <tr><td class="lokal-name">Quezon Hill</td><td class="view-count loading" data-key="lokal_quezon_hill">Loading...</td></tr>
+                <tr><td class="lokal-name">Sablan</td><td class="view-count loading" data-key="lokal_sablan">Loading...</td></tr>
+                <tr><td class="lokal-name">San Carlos Heigths</td><td class="view-count loading" data-key="lokal_san_carlos_heights">Loading...</td></tr>
+                <tr><td class="lokal-name">San Luis</td><td class="view-count loading" data-key="lokal_san_luis">Loading...</td></tr>
+                <tr><td class="lokal-name">Sayatan</td><td class="view-count loading" data-key="lokal_sayatan">Loading...</td></tr>
+                <tr><td class="lokal-name">Tadiangan</td><td class="view-count loading" data-key="lokal_tadiangan">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Taloy Sur</td><td class="view-count loading" data-key="lokal_taloy_sur">Loading...</td></tr>
+                <tr><td class="lokal-name">Tomay</td><td class="view-count loading" data-key="lokal_tomay">Loading...</td></tr>
+                <tr><td class="lokal-name">Tuba</td><td class="view-count loading" data-key="lokal_tuba">Loading...</td></tr>
+                <tr><td class="lokal-name">Tublay</td><td class="view-count loading" data-key="lokal_tublay">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-title mt-5"><i class="fa-solid fa-trophy text-white me-2"></i> Top 10 Highest Views</div>
+    <div class="table-responsive">
+        <table class="tally-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Rank & Lokal</th>
+                    <th style="text-align: right;">Views</th>
+                </tr>
+            </thead>
+            <tbody id="top10-tbody">
+                <tr><td colspan="2" class="text-center loading py-4">Calculating top standings...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<button class="scroll-top-btn" id="scrollTopBtn" title="Go to top">
+    <i class="fa-solid fa-angles-up"></i>
+</button>
+
+<script>
+    // 1. Smooth Scroll
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    scrollTopBtn.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 2. Database Namespace Identifier
+    const WORKSPACE = "incmv_awards_2026_regional_tally";
+// System to safely track real-time view data
+    let tallyData = [];
+    const allCells = document.querySelectorAll('.view-count');
+    const totalRequests = allCells.length;
+    let completedRequests = 0;
+
+    // 3. Fetch View Counts
+    allCells.forEach(cell => {
+        const key = cell.getAttribute('data-key');
+        const lokalName = cell.parentElement.querySelector('.lokal-name').textContent;
+        
+        fetch(`https://api.counterapi.dev/v1/${WORKSPACE}/${key}/up`)
+            .then(response => response.json())
+            .then(data => {
+                const countVal = parseInt(data.count);
+                
+                // Update alphabetical row element
+                cell.textContent = countVal.toLocaleString(); 
+                cell.classList.remove('loading');
+
+                // Record value for sorting calculations
+                tallyData.push({ name: lokalName, views: countVal });
+                completedRequests++;
+
+                // Build metrics calculations when all cells finish loading
+                if (completedRequests === totalRequests) {
+                    calculateOverallTotal();
+                    buildTop10Leaderboard();
+                }
+            })
+            .catch(error => {
+                console.error("Error updating counter:", error);
+                cell.textContent = "0"; 
+                tallyData.push({ name: lokalName, views: 0 });
+                completedRequests++;
+                if (completedRequests === totalRequests) {
+                    calculateOverallTotal();
+                    buildTop10Leaderboard();
+                }
+            });
+    });
+
+    // 4. Calculate and Display Total Overall Views
+    function calculateOverallTotal() {
+        // Adds up all item view counts in the data array
+        const globalSum = tallyData.reduce((accumulator, item) => accumulator + item.views, 0);
+        document.getElementById('overall-total').textContent = globalSum.toLocaleString();
+    }
+
+    // 5. Calculate and Display Top 10 Highest
+    function buildTop10Leaderboard() {
+        // Sort highest down to lowest
+        tallyData.sort((a, b) => b.views - a.views);
+
+        // Splice top 10 rows
+        const top10 = tallyData.slice(0, 10);
+        const leaderboardBody = document.getElementById('top10-tbody');
+        leaderboardBody.innerHTML = ''; // Wipe out loading placeholder
+
+        // Generate rows into the bottom table structure
+        top10.forEach((item, index) => {
+            const rank = index + 1;
+
+            const rowHTML = `
+                <tr>
+                    <td class="lokal-name">
+                        <span class="rank-badge">#${rank}</span> ${item.name}
+                    </td>
+                    <td class="top-view-count">
+                        ${item.views.toLocaleString()}
+                    </td>
+                </tr>
+            `;
+            leaderboardBody.insertAdjacentHTML('beforeend', rowHTML);
+        });
+    }
+</script>
+
+</body>
+</html>
