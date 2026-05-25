@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INCMV Awards 2026 Live Tally </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #000000;
+        }
+
+        /* Top Header Styling */
+        .header-banner {
+            border-bottom: 5px solid #e0e0e0;
+            padding: 20px 15px;
+            text-align: center;
+        }
+        .header-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #111111;
+        }
+
+        /* Table Structure & Styling */
+        .tally-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        /* Table Header Row */
+        .tally-table th {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.7rem;
+            font-weight: 900;
+            padding: 15px 20px;
+            border-bottom: 3px solid #000000;
+        }
+
+        /* Table Body Rows */
+        .tally-table td {
+            font-size: 1.15rem;
+            padding: 18px 20px;
+            vertical-align: middle;
+        }
+
+        /* Serif font style for the Lokal names */
+        .lokal-name {
+            font-family: "Georgia", "Times New Roman", Times, serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #222222;
+        }
+
+        /* Align view counts to the right */
+        .view-count {
+            text-align: right;
+            font-weight: 400;
+            color: #111111;
+        }
+
+        /* Alternating row backgrounds */
+        .tally-table tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .tally-table tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        /* Floating Scroll-to-Top Button */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            background-color: #00bfff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.2s ease;
+            z-index: 1000;
+        }
+        .scroll-top-btn:hover {
+            background-color: #0099cc;
+        }
+
+        /* Loading placeholder styling */
+        .loading {
+            color: #888;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid px-0">
+    
+    <div class="header-banner">
+        <h1 class="header-title">
+            God's Love |<br>
+            Distrito ng Benguet | INCMV<br>
+            AWARDS 2026
+        </h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="tally-table">
+            <thead>
+                <tr>
+                    <th style="text-align: left;">Lokal</th>
+                    <th style="text-align: right;">Views</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="lokal-name">Ambiong</td><td class="view-count loading" data-key="lokal_01">Loading...</td></tr>
+                <tr><td class="lokal-name">Atok Gold</td><td class="view-count loading" data-key="lokal_02">Loading...</td></tr>
+                <tr><td class="lokal-name">Aurora Hill</td><td class="view-count loading" data-key="lokal_03">Loading...</td></tr>
+                <tr><td class="lokal-name">Baguio City</td><td class="view-count loading" data-key="lokal_04">Loading...</td></tr>
+                <tr><td class="lokal-name">Balakbak</td><td class="view-count loading" data-key="lokal_05">Loading...</td></tr>
+                <tr><td class="lokal-name">Balatoc</td><td class="view-count loading" data-key="lokal_06">Loading...</td></tr>
+                <tr><td class="lokal-name">Bangho</td><td class="view-count loading" data-key="lokal_07">Loading...</td></tr>
+                <tr><td class="lokal-name">Basca</td><td class="view-count loading" data-key="lokal_08">Loading...</td></tr>
+                <tr><td class="lokal-name">Binanga Ext</td><td class="view-count loading" data-key="lokal_09">Loading...</td></tr>
+                <tr><td class="lokal-name">Buyagan</td><td class="view-count loading" data-key="lokal_10">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Camp 6</td><td class="view-count loading" data-key="lokal_11">Loading...</td></tr>
+                <tr><td class="lokal-name">Camp 7</td><td class="view-count loading" data-key="lokal_12">Loading...</td></tr>
+                <tr><td class="lokal-name">Camp 8</td><td class="view-count loading" data-key="lokal_13">Loading...</td></tr>
+                <tr><td class="lokal-name">City Camp</td><td class="view-count loading" data-key="lokal_14">Loading...</td></tr>
+                <tr><td class="lokal-name">Gibraltar</td><td class="view-count loading" data-key="lokal_15">Loading...</td></tr>
+                <tr><td class="lokal-name">Greenwater</td><td class="view-count loading" data-key="lokal_16">Loading...</td></tr>
+                <tr><td class="lokal-name">Guisad</td><td class="view-count loading" data-key="lokal_17">Loading...</td></tr>
+                <tr><td class="lokal-name">Hillside</td><td class="view-count loading" data-key="lokal_18">Loading...</td></tr>
+                <tr><td class="lokal-name">Irisan</td><td class="view-count loading" data-key="lokal_19">Loading...</td></tr>
+                <tr><td class="lokal-name">Kapangan</td><td class="view-count loading" data-key="lokal_20">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Kias</td><td class="view-count loading" data-key="lokal_21">Loading...</td></tr>
+                <tr><td class="lokal-name">Lacaan</td><td class="view-count loading" data-key="lokal_22">Loading...</td></tr>
+                <tr><td class="lokal-name">La Trinidad</td><td class="view-count loading" data-key="lokal_23">Loading...</td></tr>
+                <tr><td class="lokal-name">Loacan</td><td class="view-count loading" data-key="lokal_24">Loading...</td></tr>
+                <tr><td class="lokal-name">Loakan Airport</td><td class="view-count loading" data-key="lokal_25">Loading...</td></tr>
+                <tr><td class="lokal-name">Lourdes</td><td class="view-count loading" data-key="lokal_26">Loading...</td></tr>
+                <tr><td class="lokal-name">Marcos Highway</td><td class="view-count loading" data-key="lokal_27">Loading...</td></tr>
+                <tr><td class="lokal-name">Megaroyale</td><td class="view-count loading" data-key="lokal_28">Loading...</td></tr>
+                <tr><td class="lokal-name">Mirador Hills</td><td class="view-count loading" data-key="lokal_29">Loading...</td></tr>
+                <tr><td class="lokal-name">Norcar</td><td class="view-count loading" data-key="lokal_30">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Penged</td><td class="view-count loading" data-key="lokal_31">Loading...</td></tr>
+                <tr><td class="lokal-name">Philex</td><td class="view-count loading" data-key="lokal_32">Loading...</td></tr>
+                <tr><td class="lokal-name">Pinsao</td><td class="view-count loading" data-key="lokal_33">Loading...</td></tr>
+                <tr><td class="lokal-name">Posos</td><td class="view-count loading" data-key="lokal_34">Loading...</td></tr>
+                <tr><td class="lokal-name">Quezon Hill</td><td class="view-count loading" data-key="lokal_35">Loading...</td></tr>
+                <tr><td class="lokal-name">Sablan</td><td class="view-count loading" data-key="lokal_36">Loading...</td></tr>
+                <tr><td class="lokal-name">San Carlos Heights</td><td class="view-count loading" data-key="lokal_37">Loading...</td></tr>
+                <tr><td class="lokal-name">San Luis</td><td class="view-count loading" data-key="lokal_38">Loading...</td></tr>
+                <tr><td class="lokal-name">Sayatan</td><td class="view-count loading" data-key="lokal_39">Loading...</td></tr>
+                <tr><td class="lokal-name">Tadiangan</td><td class="view-count loading" data-key="lokal_40">Loading...</td></tr>
+
+                <tr><td class="lokal-name">Taloy Sur</td><td class="view-count loading" data-key="lokal_41">Loading...</td></tr>
+                <tr><td class="lokal-name">Tomay</td><td class="view-count loading" data-key="lokal_42">Loading...</td></tr>
+                <tr><td class="lokal-name">Tuba</td><td class="view-count loading" data-key="lokal_43">Loading...</td></tr>
+                <tr><td class="lokal-name">Tublay</td><td class="view-count loading" data-key="lokal_44">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<button class="scroll-top-btn" id="scrollTopBtn" title="Go to top">
+    <i class="fa-solid fa-angles-up"></i>
+</button>
+
+<script>
+    // 1. Smooth Scroll Javascript
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    scrollTopBtn.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // 2. Live Views Counter Javascript
+    const NAMESPACE = "incmv_awards_2026_expanded"; 
+
+    document.querySelectorAll('.view-count').forEach(cell => {
+        const key = cell.getAttribute('data-key');
+        
+        // Connects to the serverless tally counter API
+        fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${key}`)
+            .then(response => response.json())
+            .then(data => {
+                cell.textContent = data.value.toLocaleString(); 
+                cell.classList.remove('loading');
+            })
+            .catch(error => {
+                console.error("Error updating metric:", error);
+                cell.textContent = "0"; 
+            });
+    });
+</script>
+
+</body>
+</html>
